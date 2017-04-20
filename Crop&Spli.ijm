@@ -66,7 +66,7 @@ for (ii=1; ii<=chan; ii++){
 	
 	//add the value of minmin everywhere such that the "black" background
 	//is this value for image contrast scaling purposes
-	run("Add...", "stack value="+minmin);
+	//run("Add...", "stack value="+minmin);
 
 	
 	//paste selection into the new stack frame by frame
