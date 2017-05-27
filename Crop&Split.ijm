@@ -1,3 +1,9 @@
+// Created by Prof. Julian Sosnik for Prof. Catherine McCusker's Lab
+// evolved from a macro created by Dr. Matheus Viana / Dr. Susanne Rafelski
+//
+//This work is distributed under the Modiffied BSD license (https://opensource.org/licenses/BSD-3-Clause)
+//
+///////////////////////////////////////////////////////////////////////////
 //This macro opens a file, let's you select an area and then creates a cropped version 
 // of your image (or stack, or Hyperstack) that contains only the portion
 // of the original image that you selected...
