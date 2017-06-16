@@ -3,41 +3,40 @@
 % Copyright (C) 2017 Julian Sosnik
 % 
 %This work is distributed under the Modiffied BSD license. For full license
-%text see lines 251 to 275 or go to https://opensource.org/licenses/BSD-3-Clause
+%text see lines 244 to 268 or go to https://opensource.org/licenses/BSD-3-Clause
 %
 %This program performs chromatin condensation quantification based on the 
 %algorithm published by Iriant, Lee and Knight (2014)
 %doi:10.1016/j.medengphy.2013.09.006
 %
-% MAIN THRESHOLDING PERFORMED ON THE COMBINED DATASET
-%
-% It performs analysis of 
+% It performs chromatin condensation analysis of 
 % consecutive Z slices from a stack of images.
-% It also handles multiple image folders. Place all the folders containing 
-% the images to be analyzed in a single master folder. Keep the subfolders
-% containing the individual Z slices (as tiff files) inside the master
+% It can also handles multiple image folders. Place all the folders containing 
+% the individual z-stacks of images to be analyzed in a single master folder. 
+% Keep the subfolders containing the individual Z slices (as tiff files) inside the master
 % folder.
 %
 % Many parameters within the analysis can be moddified if desired. To do so
 % simply type edit ChomCond.m in the Command Window and read the comments
-% starting on line 28.
+% starting on line 26.
 
 clear;
 clc
 
 %% Analysis options
 % to change the sigma of the gaussian filter make sigma ~= 1
-% to skip the gaussian filter completely make sigma = 0
+% to skip the gaussian filter completely make sigma = 0 NOT RECOMENDED
 % SobelThresh is the threshold for the Sobel edge algorithm (for auto = 0)
-% n is the level of erotion to apply for none set to 0
+% n is the level of erotion to apply. For none, set to 0.
 % thresh is the number of threshold bins to apply to the segmented nuclei
-% set 0 for automatic thresholding
+% set to 0 for automatic thresholding
 % threshLimit selects the smallest bin from the thresholded image to keep
 sigma = 1;
+
 if sigma
     h = fspecial('gaussian', 3, sigma);
 end
-SobelThresh = 0.09;
+SobelThresh = 0.00;
 n = 2;
 thresh = 0;
 threshLimit = 2;
@@ -46,7 +45,6 @@ count = 0;
 
 %% Main rutine starts here
 directory = uigetdir;
-tic;
 cd (directory);
 dirnames = dir(directory);
 dirname = dirnames([dirnames.isdir]);  % Generates list of directiries
@@ -74,7 +72,7 @@ for i = 1:numel(dirname)
     count = count + numel(filenamess);  % Count total number of files
     cd ..
 end
-stru{count} = [];       % Generate a structure to hild the images
+stru{count} = [];       % Generate a structure to hold the images
 
 %% Generate a cell crray containing all the iamges to calculate threshold
 k = 0;
@@ -104,11 +102,9 @@ if thresh == 0
 else
     T2 = multithresh(T1(T1>T),thresh);
 end
-time1 = toc;
 clear T1 T0
-%%
-% T = 10619;
-% T2 = 22163;
+
+
 %% Initiates main loop directory by directory
 for i = 1:numel(dirname)     
     cd (dirname(i).name);
@@ -142,7 +138,7 @@ for i = 1:numel(dirname)
         
         % Gaussian filter (eliminates high frequency noise)
         I1 = I0;
-        if sigma ~= 0
+        if sigma > 0
             I1 = imfilter(I1,h);
         end
         
@@ -241,12 +237,9 @@ for i = 1:numel(dirname)
     fprintf(fileID, 'file, Area, Edge, Ratio\n');
     fprintf(fileID, '%3d, %8d, %6d, %3.8f\n', resu);
     fclose all;
-%     save(output(1:end-4))
 end
-cd ..
+
 cd(goback)
-save times1
-time2 = toc;
 
 %% Full License Text:
 % Redistribution and use in source and binary forms, with or without modification,
