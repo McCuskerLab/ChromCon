@@ -55,25 +55,12 @@ for (ii=1; ii<=chan; ii++){
 	getVoxelSize(Vwidth, Vheight, depth, unit);
 	fps = Stack.getFrameInterval();
 	
-	// first find the minimum value within the selection within the entire z-stack
-	minmin =65535; //this is the maximum value for a 16-bit image and a starting point
-	for (n=1; n<=slices; n++) {
-		setSlice(n);
-		getStatistics(area, mean, min, max);
-		if (min<minmin) minmin = min;
-		}
-	
 	//make a new image z-stack
 	newImage("C"+ii+"-"+newName+"_cropped", "16-bit Black", roiWidth, roiWeight, slices);
 	final = getImageID;	//now can refer to this new z-stack as "final" and go back and forth between orig and final
 	setMetadata("Info", info);
 	run("Properties...", "channels="+channels+" slices="+slices+" frames="+frames+" unit="+unit+" pixel_width="+Vwidth+" pixel_height="+Vheight+" voxel_depth="+depth+" frame=["+fps+" sec]");
 	Stack.setFrameRate(fps);
-	
-	//add the value of minmin everywhere such that the "black" background
-	//is this value for image contrast scaling purposes
-	//run("Add...", "stack value="+minmin);
-
 	
 	//paste selection into the new stack frame by frame
 	for (n=1; n<=slices; n++) {
