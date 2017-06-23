@@ -1,7 +1,11 @@
 ## Welcome to ChromCon, the Chromatin Condensation Quantitative Analysis Project of the McCusker Lab
 
-Access the  [README_FIRST](https://github.com/McCuskerLab/ChromCon/README_FIRST.md) file for instructions on the different files avalable for download. Before using any of the files, make sure to check out the individual insteuctions for installation and use. You will find those links in the [README_FIRST](https://github.com/McCuskerLab/ChromCon/README_FIRST.md) file.
-
-We hope that you make use of our tools for your research. If you do, please cite our paper: 
+In this repository you can find the code corresponding to our publication **Sosnik, J., Vieira, W. A., Webster, K. A., Siegfried, K. R. and McCusker, C. D.** (2017). A New and Improved Algorithm for the Quantification of Chromatin Condensation from Microscopic Data Shows Decreased Chromatin Condensation in Regenerating Axolotl Limb Cells. *PLOS One*. We hope that you make use of our tools for your research. If you do, please cite our paper. 
 
 All the files are provided under the BSD 3-Clause License. You can access the terms on the [license](https://github.com/McCuskerLab/ChromCon/blob/master/LICENSE) here.
+
+There are two tools that we have made available here. The first one, [Crop&Split](https://github.com/McCuskerLab/ChromCon/blob/master/Crop%26Split.ijm) is an ImageJ macro that allows you to mark an area in your z-stack and creates a new image with only the region selected in a loss-less fashion. Instructions about download, installation and how to use the tool can be found in the [Crop&Split_Instructions](https://github.com/McCuskerLab/ChromCon/blob/master/Crop%26Split_Instructions.txt) file. This tool makes it easy to split your image stacks into folders with individual z planes that you can use as a starting point for the ChromCond tool.
+
+The Second tool is called [ChromCond](https://github.com/McCuskerLab/ChromCon/blob/master/ChromCond.m) and is the tool that performs quantitative analysis of chromatin condensation. This is a MATLAB tool but we have also provided a compiled version that you can download a use freely, even if you don't have a MATLAB license. Instructions about download, installation and how to use the different versions of the tool can be found in the [ChromCond_Instructions](https://github.com/McCuskerLab/ChromCon/blob/master/ChromCond_Instructions.txt) file.
+
+
