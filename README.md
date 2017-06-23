@@ -4,4 +4,4 @@ Access the  [README_FIRST](https://github.com/McCuskerLab/ChromCon/README_FIRST.
 
 We hope that you make use of our tools for your research. If you do, please cite our paper: 
 
-All the files are provided under the BSD 3-Clause License. You can access the terms on the [license](https://github.com/McCuskerLab/ChromCon/LICENSE) here.
+All the files are provided under the BSD 3-Clause License. You can access the terms on the [license](https://github.com/McCuskerLab/ChromCon/blob/master/LICENSE) here.
