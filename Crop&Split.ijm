@@ -1,7 +1,7 @@
 // Created by Prof. Julian Sosnik for Prof. Catherine McCusker's Lab
 // evolved from a macro created by Dr. Matheus Viana / Dr. Susanne Rafelski
 //
-//This work is distributed under the Modiffied BSD license (https://opensource.org/licenses/BSD-3-Clause)
+//This work is distributed under the Modified BSD license (https://opensource.org/licenses/BSD-3-Clause)
 //
 ///////////////////////////////////////////////////////////////////////////
 //This macro opens a file, let's you select an area and then creates a cropped version 
@@ -17,7 +17,7 @@ name = getTitle();
 l = lengthOf(name);
 newName = substring(name,0,l-4);
 getDimensions(width, height, channels, slices, frames);
-File.makeDirectory(path+newName); //creates forder to save the output files
+File.makeDirectory(path+newName); //creates folder to save the output files
 
 //select area to crop into new image
 waitForUser("Select area to crop and hit ok");
@@ -42,7 +42,7 @@ if (chan>1){
 	run("Split Channels");
 }
 for (ii=1; ii<=chan; ii++){
-	File.makeDirectory(path+newName+"/C"+ii); //creates sub-forder to save the output files for each channel
+	File.makeDirectory(path+newName+"/C"+ii); //creates sub-folder to save the output files for each channel
 	if (chan>1){
 		orig = "C"+ii+"-"+name; // now can refer to that image as "orig"
 	} else {
