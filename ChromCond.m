@@ -1,12 +1,12 @@
 %% ChromCond.m
-% created by Prof. Julian Sosnik for Prof. Catheirne McuCusker
+% created by Prof. Julian Sosnik for Prof. Catherine McCusker
 % Copyright (C) 2017 Julian Sosnik
 % 
-%This work is distributed under the Modiffied BSD license. For full license
+%This work is distributed under the Modified BSD license. For full license
 %text see lines 244 to 268 or go to https://opensource.org/licenses/BSD-3-Clause
 %
 %This program performs chromatin condensation quantification based on the 
-%algorithm published by Iriant, Lee and Knight (2014)
+%algorithm published by Irianto, Lee and Knight (2014)
 %doi:10.1016/j.medengphy.2013.09.006
 %
 % It performs chromatin condensation analysis of 
@@ -16,7 +16,7 @@
 % Keep the subfolders containing the individual Z slices (as tiff files) inside the master
 % folder.
 %
-% Many parameters within the analysis can be moddified if desired. To do so
+% Many parameters within the analysis can be modified if desired. To do so
 % simply type edit ChomCond.m in the Command Window and read the comments
 % starting on line 26.
 
@@ -24,10 +24,10 @@ clear;
 clc
 
 %% Analysis options
-% to change the sigma of the gaussian filter make sigma ~= 1
-% to skip the gaussian filter completely make sigma = 0 NOT RECOMENDED
+% to change the sigma of the Gaussian filter make sigma ~= 1
+% to skip the Gaussian filter completely make sigma = 0 NOT RECOMENDED
 % SobelThresh is the threshold for the Sobel edge algorithm (for auto = 0)
-% n is the level of erotion to apply. For none, set to 0.
+% n is the level of erosion to apply. For none, set to 0.
 % thresh is the number of threshold bins to apply to the segmented nuclei
 % set to 0 for automatic thresholding
 % threshLimit selects the smallest bin from the thresholded image to keep
@@ -43,18 +43,17 @@ threshLimit = 2;
 goback = pwd;
 count = 0;
 
-%% Main rutine starts here
+%% Main routine starts here
 directory = uigetdir;
 cd (directory);
 dirnames = dir(directory);
-dirname = dirnames([dirnames.isdir]);  % Generates list of directiries
+dirname = dirnames([dirnames.isdir]);  % Generates list of directories
 numdirs = numel(dirname);
 
 for i = numdirs:-1:1
     if dirname(i).name(1) == '.'   % Eliminate system directories
         dirname(i) = [];
     end
-
 end
 
 %% Count the number of files to be analyzed
@@ -74,7 +73,7 @@ for i = 1:numel(dirname)
 end
 stru{count} = [];       % Generate a structure to hold the images
 
-%% Generate a cell crray containing all the iamges to calculate threshold
+%% Generate a cell array containing all the images to calculate threshold
 k = 0;
 for i = 1:numel(dirname)    % Cycle all the directories
     cd(dirname(i).name);
@@ -142,7 +141,7 @@ for i = 1:numel(dirname)
             I1 = imfilter(I1,h);
         end
         
-        %Thereshold application to I1
+        %Threshold application to I1
         I2 = imquantize(I1,T);
         I2(I2==1)=0;
         I2 = logical(I2);
@@ -166,8 +165,7 @@ for i = 1:numel(dirname)
         else
             I5 = edge(I4, 'sobel',SobelThresh);
         end
-        
-        
+
         %Threshold application to I4
         I6 = imquantize(I4,T2);
         I6(I6<threshLimit)=0;
@@ -219,7 +217,7 @@ for i = 1:numel(dirname)
 
     end
     
-    %% reults are compiled and saved
+    %% results are compiled and saved
     len = length(AreaList);
     results = zeros(len,4);
 
