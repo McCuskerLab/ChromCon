@@ -1,6 +1,6 @@
 ## Welcome to ChromCon, the Chromatin Condensation Quantitative Analysis Project of the McCusker Lab
 
-In this repository you can find the code corresponding to our publication **Sosnik, J., Vieira, W. A., Webster, K. A., Siegfried, K. R. and McCusker, C. D.** (2017). A New and Improved Algorithm for the Quantification of Chromatin Condensation from Microscopic Data Shows Decreased Chromatin Condensation in Regenerating Axolotl Limb Cells. *PLOS One*. We hope that you make use of our tools for your research. If you do, please cite our paper. 
+In this repository you can find the code corresponding to our publication **Sosnik, J., Vieira, W. A., Webster, K. A., Siegfried, K. R. and McCusker, C. D.** (2017). A New and Improved Algorithm for the Quantification of Chromatin Condensation from Microscopic Data Shows Decreased Chromatin Condensation in Regenerating Axolotl Limb Cells. *PLoS ONE12(10): e0185292. https://doi.org/10.1371/journal.pone.0185292*. We hope that you make use of our tools for your research. If you do, please cite our paper. 
 
 All the files are provided under the BSD 3-Clause License. You can access the terms on the [license](https://mccuskerlab.github.io/ChromCon/LIC) here.
 
