@@ -1,8 +1,7 @@
 // Created by Prof. Julian Sosnik for Prof. Catherine McCusker's Lab
 // evolved from a macro created by Dr. Matheus Viana / Dr. Susanne Rafelski
 //
-// This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 international
-// To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
+// This work is distributed under the Modified BSD license (https://opensource.org/licenses/BSD-3-Clause)
 //
 //////////////////////////////////////////////////////////////////////////////////////
 // This macro opens a file, let's you select an area and then creates a cropped version 
@@ -10,11 +9,13 @@
 // of the original image that you selected...
 // In the case of multiple channels, it generates sub-folders
 // for each of the channels and stores the images there
+// It also offers the option to select the start and end Z planes on a stack
 //////////////////////////////////////////////////////////////////////////
 macro "Crop&Split Action Tool - Ce00T7d18J" {
 run("Open...");
 // gather file name and path for the original image
 path = getInfo("image.directory");
+path  = path + "/";
 name = getTitle();
 l = lengthOf(name);
 newName = substring(name,0,l-4);
