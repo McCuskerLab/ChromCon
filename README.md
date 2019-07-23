@@ -8,4 +8,3 @@ There are two tools that we have made available here. The first one, [Crop&Split
 
 The Second tool is called [ChromCond](https://github.com/McCuskerLab/ChromCon/blob/master/ChromCond.m+) and is the tool that performs quantitative analysis of chromatin condensation. This is a MATLAB tool but we have also provided a compiled version that you can download a use freely, even if you don't have a MATLAB license. Instructions about download, installation and how to use the different versions of the tool can be found in the [ChromCond_Instructions](https://mccuskerlab.github.io/ChromCon/ChromCond_Instructions) file.
 
-
