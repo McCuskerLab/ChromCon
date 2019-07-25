@@ -14,7 +14,6 @@ Before you run the code, make sure your images are split into individual ***.tif
 Now you can just ***Run*** the code.
 
 ## How does it work? What does it do?
-The first thing the macro does is open a window so that you can select the file (image) you want to work with.
-Afer you selec the image and hit **Open**, imageJ will open the image and ask you to select an area to crop and **then** press ok. You can select an area with any of ImageJ's selection tools. If you want to process tha whole image, leave it without any selection. Afte you are done selecting click the OK button on the prompt window.
-ImageJ will then go to work on the background, generating a folder named after the original image and giving a prompt indicating that the macro has finished processing. Inside this folder you'll find as many ***.tif*** files as chanels the original image has. For each of these images, you'll also find a folder names after each chanel and insife this folders, individual images corresponding to each individual optical plane of your Z-stack.
-You can now use these images and/or folders for further analysis.
+The first thing the code does is is ask you for the location of the master folder containing the image folders with the individual ***.tif*** files.
+Afer you selec the master folder, Matlab will go to work. Depending on the ammount of images you are processing and the memory and speed of your computer, this process can take several minutes.
+Once the process is complete, Matlab will generate an individual ***.csv*** file for each of the images in the mater folder. Each one of these includes the name of each slice analyzed, the nuvclear area in each slice, the condensation area for each slice and the ratio of these two (***the condensation index***) for each.
