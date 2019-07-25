@@ -3,7 +3,7 @@
  ChromCond is Matlab code that quantiffies **chromatin compaction**. Following are instructins on how to download, install and use the tool.
 
 ## How to Download
-In order to download [ChromCond](https://raw.githubusercontent.com/McCuskerLab/ChromCon/master/Crop%26Split.ijm) just click on the [link](https://raw.githubusercontent.com/McCuskerLab/ChromCon/master/Crop%26Split.ijm) and save the file locally to your computer as a **.m** (matlab) file. 
+In order to download [ChromCond](https://raw.githubusercontent.com/McCuskerLab/ChromCon/master/ChromCond.m) just click on the [link](https://raw.githubusercontent.com/McCuskerLab/ChromCon/master/ChromCond.m) and save the file locally to your computer as a **.m** (matlab) file. 
 
 ## How to install
 As an installation, you just need to place the saved file somewere in your computer where you can find it. Preferably within your **MATLAB** folder.
