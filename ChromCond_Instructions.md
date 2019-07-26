@@ -11,7 +11,7 @@ As an installation, you just need to place the saved file somewere in your compu
 ## How to use
 In order to use the **ChromCond** code, first open Matlab and oopen the **.m** file you saved above.
 Before you run the code, make sure your images are split into individual ***.tif*** files corresponding to each of the optical sectinons of you image, saved into individual folders for each image to be anlyzed. All these folders should be inside a master folder as indicated in the following image.
-![Folder_and_File_Organization_Image](https://github.com/McCuskerLab/ChromCon/blob/gh-pages/FileOrganization.png "File and Folder Organization")
+![Folder_and_File_Organization_Image](https://github.com/McCuskerLab/ChromCon/blob/gh-pages/FileOrganization_copy.png "File and Folder Organization")
 
 Now you can just ***Run*** the code.
 
