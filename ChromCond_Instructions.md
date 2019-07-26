@@ -17,6 +17,7 @@ All these folders should be inside a master folder as indicated in the following
 ![Folder_and_File_Organization_Image](FileOrganization.png "File and Folder Organization")
 
 You can prepare your files using our ImageJ plugin [Crop&Split](https://mccuskerlab.github.io/ChromCon/Crop%26Split_Instructions) 
+
 Now you can just ***Run*** the code.
 
 ## How does it work? What does it do?
