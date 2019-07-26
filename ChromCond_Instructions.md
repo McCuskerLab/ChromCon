@@ -14,7 +14,7 @@ Before you run the code, make sure your images are split into individual ***.tif
 
 All these folders should be inside a master folder as indicated in the following image.
 
-![Folder_and_File_Organization_Image](https://github.com/McCuskerLab/ChromCon/blob/gh-pages/FileOrganization_copy.png "File and Folder Organization")
+![Folder_and_File_Organization_Image](https://github.com/McCuskerLab/ChromCon/blob/gh-pages/FileOrganization.png "File and Folder Organization")
 
 Now you can just ***Run*** the code.
 
